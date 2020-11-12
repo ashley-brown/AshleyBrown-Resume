@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="discription" content="No batteries required">
+    <meta name="author" content="862152211">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Title of your Website -->
+    <title>Remote Control Trucks</title>
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+    <!-- Top Menu Bar -->
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-1" href="https://traxxas.com/" target="_blank">Traxxas</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-2" href="https://www.horizonhobby.com/" target="_blank">horizonhobby</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-3" href="https://www.towerhobbies.com/" target="_blank">towerhobbies</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-4" href="https://www.rcsuperstore.com/" target="_blank">rcsuperstore</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-5" href="https://www.thedrive.com/" target= "blank">thedrive</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-6" href="https://www.rcplanet.com/" target="blank">rcplanet</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-7" href="https://www.hobbytown.com/" target="blank">hobbytown</a>
+    </div>
+</nav>
+<!-- Main Header Section h1-->
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-0 text-center bg-light">
+    <div class="col-md-8 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Fastest Remote Control Trucks around Town!</h1>
+        <p class="lead font-weight-normal">Pre-Order the fastest RC trucks around, 10 minutes and we have a full charge that's good for the whole day! You wont't find RC's like this anywhere. Come play with your ned high speed turbo flex engine RC truck and show all your friends up!.</p>
+        <a class="btn btn-outline-secondary" href="#">Coming soon https://www.youtube.com/watch?v=8R7KfVG0Id8</a>
+    </div>
+</div>
+<!-- Left Tile -->
+<div class="d-md-flex flex-md-equal w-100">
+    <div class="bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">Sign up</h2>
+            <p class="lead">Sign up now to get instant access to our educational content</p>
+        </div>
+        <!-- Web form when submitted will send a text message -->
+        <form class="p-2" onsubmit="sendTextMessage(); return false;">
+            <!-- Full Name Form Field -->
+            <div class="form-group">
+                <label for="example-first-name">Full Name</label>
+                <input type="text" value="Full Name" class="form-control" id="example-first-name" aria-describedby="emailHelp">
+            </div>
+            <!-- Phone Number Form Field -->
+            <div class="form-group">
+                <label for="example-tel-input">Phone number</label>
+                <input type="tel" class="form-control" value="1408555555" id="example-tel-input">
+            </div>
+            <!-- JavaScript that handles onSubmit logic -->
+            <!-- Configure the XHR request below with your own credentials -->
+            <script>
+            function sendTextMessage () {
+                console.log("Hello world!");
+                var xhr = new XMLHttpRequest();
+                var accountSID = "AC37bb8a4f759a6c09beaa5cf0fdd45aa8";
+                var authToken = "1cd2bab78a82c5bb259d4f07d6d82c01";
+                var base64encoded = accountSID + ":" + authToken;
+                var params = "To=" + document.getElementById('example-tel-input').value + "&From=" + "14405652224" + "&Body=" + "Hello " + document.getElementById('example-first-name').value + " nice job on sending your first SMS with APIs."
+                xhr.open("POST", "https://api.twilio.com/2010-04-01/Accounts/" + accountSID + "/Messages.json", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.setRequestHeader('Authorization','Basic' + btoa*(base64encoded));
+                xhr.send(params);
+                console.log(params);
+            }
+            </script>
+            <!-- Submit button that will execute the sendTextMessage function -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- Right Tile -->
+    <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">Another Section</h2>
+            <p class="lead">Super Charged RC Trucks</p>
+            <img class="mx-auto" src="RCtruck.jpeg" height="250px">
+        </div>
+        <div class="mx-auto" style="width: 80%; height: 100px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+</div>
+  </body>
+</html>
